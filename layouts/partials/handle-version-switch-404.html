@@ -1,0 +1,9 @@
+<script type='text/javascript'>
+  (function() {
+    var sameBaseUrlRegExp = new RegExp('^' + location.protocol + '//' + location.host.replace('.', '\\.') + '/.*', 'i');
+    var privacyinnovationDocumentationUrlRegExp = new RegExp('^https?://(.+\\.)?privacyinnovation.io/.*', 'i');
+    if (!sameBaseUrlRegExp.test(document.referrer) && privacyinnovationDocumentationUrlRegExp.test(document.referrer)) {
+      location.replace('/');
+    }
+  })();
+</script>
