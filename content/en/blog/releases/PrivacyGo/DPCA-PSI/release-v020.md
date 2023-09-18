@@ -1,14 +1,14 @@
 ---
-title: "PrivacyGo Release v0.0.1"
-linkTitle: "Release v0.0.1"
+title: "DPCA-PSI Release v0.2.0"
+linkTitle: "Release v0.2.0"
 projects: ["PrivacyGo"]
-date: 2022-07-22
+date: 2023-07-26
 description: >
 ---
 
-## Feature
+## Release
 
-* Lorem ipsum
+Initial release of DPCA-PIS - https://github.com/tiktok-privacy-innovation/PrivacyGo/commits/main/dpca-psi
 
 ## Optimize
 

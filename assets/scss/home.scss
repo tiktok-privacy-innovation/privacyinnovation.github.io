@@ -91,7 +91,7 @@
 
 .home-project-item h2 {
     font-weight: 300;
-    color: #3c8fa8;
+    color: #FE2C55;
     font-size: 25px;
     white-space: nowrap;
     overflow: hidden;
@@ -101,7 +101,7 @@
 
 .home-project-item .fa {
     margin-right: 5px;
-    color: #3c8fa8;
+    color: #22F5EE;
 }
 
 .home-project-item p {
@@ -110,16 +110,16 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     margin-bottom: unset;
-    color: #000;
+    color: #ffffff;
 }
 
 .home-project-item:hover {
     transition: 0.4s all;
-    background-color: #63b0c7;
+    background-color: #FE2C55;
     border-radius: 3px;
     color: #fff;
-    box-shadow: 0 0 4px #80c6db;
-    border: 1px solid #63b0c7;
+    box-shadow: 0 0 4px #FE2C55;
+    border: 1px solid #FE2C55;
 }
 
 .home-project-item:hover p,
@@ -246,7 +246,7 @@
     }
 
     a {
-        color: #3c8fa8 !important;
+        color: #FE2C55 !important;
     }
 }
 

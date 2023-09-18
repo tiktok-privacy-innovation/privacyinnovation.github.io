@@ -1,6 +1,6 @@
 ---
-title: 'PETAce'
-linkTitle: 'PETAce'
+title: 'Research Projects'
+linkTitle: 'Research Projects'
 weight: 2
 menu:
   main:
