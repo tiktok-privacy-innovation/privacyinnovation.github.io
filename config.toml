@@ -2,7 +2,6 @@
 
 baseURL = "https://www.privacyinnovation.io"
 title = "Privacy Innovation"
-googleAnalytics = "G-"
 
 enableRobotsTXT = true
 

@@ -2,7 +2,7 @@
 
 # Privacy Innovation
 
-TikTok's [Privacy Innovation](https://privacyinnovation.io) is an open-source initiative dedicatted to advancing data privacy through cutting-edge technological advancements. Empowering privacy with advanced tech.
+TikTok's [Privacy Innovation](https://privacyinnovation.io) is an open-source initiative dedicated to advancing data privacy through cutting-edge technological advancements. Empowering privacy with advanced tech.
 
 The [Privacy Innovation](https://privacyinnovation.io) site is built with [Hugo](https://gohugo.io/) and hosted on [Vercel](https://vercel.com/).
 
