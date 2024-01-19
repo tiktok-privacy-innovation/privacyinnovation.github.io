@@ -4,11 +4,15 @@
     padding: 0 30%;
 }
 
+.home-overview-subtitle-2 {
+}
+
 
 .home-overview-btn-group {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 3rem;
+    margin-top: 10rem;
 }
 
 .home-overview-btn {
@@ -80,8 +84,6 @@
     margin: 0 8px;
     padding: 16px;
     max-width: calc(25% - 16px);
-    box-shadow: 0 0 4px #eee;
-    border: 1px solid #f0f0f0;
 }
 
 .home-project-item a {
@@ -223,6 +225,10 @@
 @media (min-width: 768px) {
     .home-overview-title {
         margin-top: 8rem !important;
+    }
+
+    .home-overview-title-2 {
+        margin-top: 3rem !important;
     }
 
     .td-block-padding,

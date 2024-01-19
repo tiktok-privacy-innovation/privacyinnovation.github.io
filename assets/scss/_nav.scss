@@ -32,6 +32,19 @@
     background-color: #000000 !important;
     margin: unset;
     padding: 0 2rem;
+    background:
+    linear-gradient(
+      to left,
+      rgba(34,245,238,1) 0%,
+      rgba(254,44,85,1) 12%,
+      rgba(34,245,238,1) 47%,
+      rgba(254,44,85,1) 100%
+    )
+    left 
+    bottom
+    #777    
+    no-repeat; 
+  background-size:100% 0.1em ;
 
     @include media-breakpoint-up(md) {
         position: fixed;
