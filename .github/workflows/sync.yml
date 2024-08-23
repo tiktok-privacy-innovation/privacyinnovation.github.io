@@ -23,7 +23,7 @@ jobs:
       run: |
         declare -A TARGETS
         TARGETS=(
-            ["source-repo-1/README.md ## Requirements"]="content/en/docs/petace/Getting started/_index.md <!-- start-section-1 --> <!-- end-section-1 -->"
+            ["source-repo-1/README.md ## Requirements"]="content/en/docs/petace/Getting started/_index.md" <!-- start-section-1 --> <!-- end-section-1 -->"
         )
 
         # Function to extract the section between a given marker and the next header
