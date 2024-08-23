@@ -16,7 +16,7 @@ jobs:
 
     - name: Clone Source Repositories
       run: |
-        git clone https://github.com/tiktok-privacy-innovation/PETAce.git source-repo-1
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git source-repo-1
 
     - name: Extract and Sync README Sections
       id: sync
