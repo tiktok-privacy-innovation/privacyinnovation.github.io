@@ -10,7 +10,7 @@ description: "Prepare your development environment, quick start and basic tutori
 ## PETAce-Solo
 
 ### Requirements
-
+<!-- start-section-1 -->
 | System | Toolchain                                             |
 |--------|-------------------------------------------------------|
 | Linux  | Clang++ (>= 5.0) or GNU G++ (>= 5.5), CMake (>= 3.15) |
@@ -23,6 +23,7 @@ description: "Prepare your development environment, quick start and basic tutori
 |--------------------------------------------------------|----------------|------------------------|
 | [GoogleTest](https://github.com/google/googletest)     | 1.12.1         | For running tests      |
 | [GoogleBenchmark](https://github.com/google/benchmark) | 1.6.1          | For running benchmarks |
+<!-- end-section-1 -->
 
 ### Building PETAce-Solo
 
