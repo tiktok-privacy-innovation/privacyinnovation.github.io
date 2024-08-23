@@ -21,24 +21,25 @@ jobs:
     - name: Extract and Sync README Sections
       id: sync
       run: |
+        # Declare the targets and associated markers
         declare -A TARGETS
         TARGETS=(
-            ["source-repo-1/README.md ## Requirements"]="content/en/docs/petace/Getting started/_index.md" "<!-- start-section-1 -->" "<!-- end-section-1 -->"
+            ["source-repo-1/README.md ## Requirements"]="content/en/docs/petace/Getting started/_index.md|<!-- start-section-1 -->|<!-- end-section-1 -->"
         )
 
         # Function to extract the section between a given marker and the next header
         extract_section() {
-            local source=$1
-            local marker=$2
+            local source="$1"
+            local marker="$2"
             awk "/^$marker/,/^## /{if(\$0 ~ /^$marker/ || \$0 ~ /^## /) next} 1" "$source"
         }
         
         # Function to replace content between markers in target file
         replace_in_file() {
-            local target=$1
-            local start_marker=$2
-            local end_marker=$3
-            local new_content=$4
+            local target="$1"
+            local start_marker="$2"
+            local end_marker="$3"
+            local new_content="$4"
 
             awk -v start="$start_marker" -v end="$end_marker" -v content="$new_content" '
             {print}
@@ -49,16 +50,16 @@ jobs:
 
         # Sync the relevant portions to each target file
         for key in "${!TARGETS[@]}"; do
-            IFS=" " read -r source marker <<< "$key"
-            IFS=" " read -r target start_marker end_marker <<< "${TARGETS[$key]}"
+            IFS="|" read -r target_file start_marker end_marker <<< "${TARGETS[$key]}"
+            IFS=" ## " read -r source marker <<< "$key"
 
             # Extract the section
             new_content=$(extract_section "$source" "$marker")
             
             # Replace the content in the target file between markers
-            replace_in_file "$target" "$start_marker" "$end_marker" "$new_content"
+            replace_in_file "$target_file" "$start_marker" "$end_marker" "$new_content"
 
-            echo "Synced $marker from $source to $target between $start_marker and $end_marker"
+            echo "Synced $marker from $source to $target_file between $start_marker and $end_marker"
         done
 
     - name: Commit Changes
