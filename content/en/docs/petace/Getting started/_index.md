@@ -11,7 +11,6 @@ description: "Prepare your development environment, quick start and basic tutori
 
 ### Requirements
 <!-- start-section-1 -->
-another test here
 
 | System | Toolchain                                             |
 |--------|-------------------------------------------------------|
@@ -35,6 +34,5 @@ another test here
 |--------------------------------------------------------|----------------|------------------------|
 | [Intel Paillier Cryptosystem Library (IPCL)](https://github.com/intel/pailliercryptolib)                                     | 495beaad1f6e70741f2b5cf1279cb919fd66d894| Paillier Encryption       |
 | [gRPC](https://github.com/grpc/grpc)                                          | 1.62.1          | Network communication              |
-
-test here
+<!-- end-section-1 -->
 <!-- end-section-1 -->
