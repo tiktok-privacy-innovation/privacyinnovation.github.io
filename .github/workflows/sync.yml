@@ -21,9 +21,17 @@ jobs:
     - name: Extract and Sync README Sections
       id: sync
       run: |
-        declare -A TARGETS
-        TARGETS=(
-            ["source-repo-1/README.md ## Requirements"]="content/en/docs/petace/Getting started/_index.md" "<!-- start-section-1 -->" "<!-- end-section-1 -->"
+        sources=(
+          "source-repo-1/README.md ## Requirements"
+        )
+        targets=(
+          "content/en/docs/petace/Getting started/_index.md"
+        )
+        start_markers=(
+          "<!-- start-section-1 -->"
+        )
+        end_markers=(
+          "<!-- end-section-1 -->"
         )
 
         extract_section() {
@@ -45,9 +53,13 @@ jobs:
             ' "$target" > tmpfile && mv tmpfile "$target"
         }
 
-        for key in "${!TARGETS[@]}"; do
-            IFS=" " read -r source marker <<< "$key"
-            IFS=" " read -r target start_marker end_marker <<< "${TARGETS[$key]}"
+        for i in "${!sources[@]}"; do
+            source_and_marker="${sources[$i]}"
+            target="${targets[$i]}"
+            start_marker="${start_markers[$i]}"
+            end_marker="${end_markers[$i]}"
+
+            IFS=" ## " read -r source marker <<< "$source_and_marker"
 
             new_content=$(extract_section "$source" "$marker")
             
