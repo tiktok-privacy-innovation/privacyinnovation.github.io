@@ -24,42 +24,32 @@ jobs:
       id: sync
       run: |
         sources=(
-          "petace-repo/README.md # PETAce"
-          "petace-repo/README.md ## Requirements"
+          "petace-repo/README.md"
         )
         targets=(
           "content/en/docs/petace/Overview/_index.md"
-          "content/en/docs/petace/Getting started/_index.md"
         )
         start_markers=(
           "<!-- start-petace-overview -->"
-          "<!-- start-petace-requirements -->"
         )
         end_markers=(
           "<!-- end-petace-overview -->"
-          "<!-- end-petace-requirements -->"
+        )
+        headers=(
+          "# PETAce"
+          "## Requirements"
         )
 
         extract_section() {
             local source_file=$1
-            local section_header=$2
-            local in_section=0
-            local section_content=""
+            local start_header=$2
+            local end_header=$3
 
-            while IFS= read -r line; do
-                if [[ $in_section -eq 1 ]]; then
-                    if [[ "$line" =~ ^#\  ]]; then
-                        break
-                    fi
-                    section_content+="$line"$'\n'
-                fi
-                if [[ "$line" == *"$section_header"* ]]; then
-                    in_section=1
-                    section_content+="$line"$'\n'
-                fi
-            done < "$source_file"
-
-            echo "$section_content"
+            awk -v start="$start_header" -v end="$end_header" '
+            $0 ~ start {flag=1; next} 
+            /^# / {if (flag) {flag=0; exit}} 
+            flag {print}
+            ' "$source_file"
         }
 
         replace_in_file() {
@@ -78,14 +68,22 @@ jobs:
         changes_made=false
 
         for i in "${!sources[@]}"; do
-            source_and_marker="${sources[$i]}"
+            source_file="${sources[$i]}"
             target="${targets[$i]}"
             start_marker="${start_markers[$i]}"
             end_marker="${end_markers[$i]}"
 
-            IFS=" # " read -r source_file section_header <<< "$source_and_marker"
+            new_content=""
 
-            new_content=$(extract_section "$source_file" "$section_header")
+            for ((j=0; j<${#headers[@]}-1; j++)); do
+                header1="${headers[$j]}"
+                header2="${headers[$((j+1))]}"
+
+                extracted=$(extract_section "$source_file" "$header1" "$header2")
+                new_content+="$extracted\n"
+
+                echo "Extracted content from $source_file between $header1 and $header2"
+            done
 
             current_content=$(awk -v start="$start_marker" -v end="$end_marker" '
             $0 ~ start {in_block=1; next}
@@ -96,9 +94,9 @@ jobs:
             if [ "$new_content" != "$current_content" ]; then
                 changes_made=true
                 replace_in_file "$target" "$start_marker" "$end_marker" "$new_content"
-                echo "Synced $section_header from $source_file to $target between $start_marker and $end_marker"
+                echo "Synced section from $source_file to $target between $start_marker and $end_marker"
             else
-                echo "No changes for $section_header in $source_file"
+                echo "No changes for section in $source_file"
             fi
         done
 
