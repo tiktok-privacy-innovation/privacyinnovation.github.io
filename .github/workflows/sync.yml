@@ -42,17 +42,24 @@ jobs:
 
         extract_section() {
             local source_file=$1
-            local start_header=$2
-            local start_flag=0
+            local section_header=$2
+            local in_section=0
+            local section_content=""
 
-            awk -v start="$start_header" '
-            function get_heading_level(heading) {
-                return length(heading) - length(gsub(/[^#]/, "", heading))
-            }
-            $0 ~ start {start_flag=1; start_level = get_heading_level($0); next}
-            start_flag && /^#/ {next_level = get_heading_level($0); if (next_level <= start_level) exit}
-            start_flag {print}
-            ' "$source_file"
+            while IFS= read -r line; do
+                if [[ $in_section -eq 1 ]]; then
+                    if [[ "$line" =~ ^#\  ]]; then
+                        break
+                    fi
+                    section_content+="$line"$'\n'
+                fi
+                if [[ "$line" == *"$section_header"* ]]; then
+                    in_section=1
+                    section_content+="$line"$'\n'
+                fi
+            done < "$source_file"
+
+            echo "$section_content"
         }
 
         replace_in_file() {
