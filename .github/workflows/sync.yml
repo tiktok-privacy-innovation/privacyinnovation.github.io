@@ -18,22 +18,26 @@ jobs:
 
     - name: Clone Source Repositories
       run: |
-        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git source-repo-1
+        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git petace-repo
 
     - name: Extract and Sync README Sections
       id: sync
       run: |
         sources=(
-          "source-repo-1/README.md ## Requirements"
+          "petace-repo/README.md ## Requirements"
+          "petace-repo/README.md # PETAce"
         )
         targets=(
           "content/en/docs/petace/Getting started/_index.md"
+          "content/en/docs/petace/Overview/_index.md"
         )
         start_markers=(
-          "<!-- start-section-1 -->"
+          "<!-- start-petace-requirements -->"
+          "<!-- start-petace-overview -->"
         )
         end_markers=(
-          "<!-- end-section-1 -->"
+          "<!-- end-petace-requirements -->"
+          "<!-- end-petace-overview -->"
         )
 
         extract_section() {

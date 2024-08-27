@@ -10,7 +10,7 @@ description: "Prepare your development environment, quick start and basic tutori
 ## PETAce-Solo
 
 ### Requirements
-<!-- start-section-1 -->
+<!-- start-petace-requirements -->
 
 | System | Toolchain                                             |
 |--------|-------------------------------------------------------|
@@ -34,5 +34,4 @@ description: "Prepare your development environment, quick start and basic tutori
 |--------------------------------------------------------|----------------|------------------------|
 | [Intel Paillier Cryptosystem Library (IPCL)](https://github.com/intel/pailliercryptolib)                                     | 495beaad1f6e70741f2b5cf1279cb919fd66d894| Paillier Encryption       |
 | [gRPC](https://github.com/grpc/grpc)                                          | 1.62.1          | Network communication              |
-<!-- end-section-1 -->
-<!-- end-section-1 -->
+<!-- end-petace-requirements -->
