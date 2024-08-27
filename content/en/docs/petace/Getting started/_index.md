@@ -34,4 +34,36 @@ description: "Prepare your development environment, quick start and basic tutori
 |--------------------------------------------------------|----------------|------------------------|
 | [Intel Paillier Cryptosystem Library (IPCL)](https://github.com/intel/pailliercryptolib)                                     | 495beaad1f6e70741f2b5cf1279cb919fd66d894| Paillier Encryption       |
 | [gRPC](https://github.com/grpc/grpc)                                          | 1.62.1          | Network communication              |
+
+## Building PETAce
+
+The commands presented below should be executed in the root directory of PETAce.
+
+First, build [JSON for Modern C++ (JSON)](https://github.com/nlohmann/json) using the following scripts.
+Assume that JSON is cloned into the directory `${JSON}`.
+
+```bash
+cmake -B ${JSON}/build -S ${JSON}
+cmake --build ${JSON}/build -j
+```
+
+Then, build PETAce library:
+
+```bash
+cmake -S . -B build -Dnlohmann_json_DIR=${JSON}/build -DPETACE_BUILD_PYTHON=ON
+cmake --build build
+cd build
+make wheel
+```
+
+Output binaries can be found in `build/python/wheel/` directory.
+
+| Compile Options            | Values        | Default | Description                                         |
+|----------------------------|---------------|---------|-----------------------------------------------------|
+| `CMAKE_BUILD_TYPE`         | Release/Debug | Release | Debug mode decreases run-time performance.          |
+
+For more compilation options, such as enabling IPCL and network agents, please refer to [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo) and [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network).
+
+For instructions on how to run examples of PETAce, please refer to the instructions in the example directory.
+<!-- end-petace-requirements -->
 <!-- end-petace-requirements -->
