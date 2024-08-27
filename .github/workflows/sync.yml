@@ -37,7 +37,7 @@ jobs:
         extract_section() {
             local source=$1
             local marker=$2
-            awk "/^$marker/,/^## /{if(\$0 ~ /^$marker/ || \$0 ~ /^## /) next} 1" "$source"
+            awk "/^$marker/,/^## /{if(\$0 ~ /^$marker/ || \$0 ~ /^## /) next} 1" "$source" | sed '$d'
         }
         
         replace_in_file() {
