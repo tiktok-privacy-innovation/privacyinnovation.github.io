@@ -35,22 +35,25 @@ jobs:
         )
 
         extract_section() {
-            local source=$1
-            local marker=$2
-            awk "/^$marker/,/^## /{if(\$0 ~ /^$marker/ || \$0 ~ /^## /) next} 1" "$source" | sed '$d'
+            local source_file=$1
+            local section_header=$2
+            awk -v header="$section_header" '
+            $0 ~ header {flag=1; next} 
+            /^## / {flag=0} 
+            flag {print}' "$source_file"
         }
-        
+
         replace_in_file() {
-            local target=$1
+            local target_file=$1
             local start_marker=$2
             local end_marker=$3
             local new_content=$4
 
             awk -v start="$start_marker" -v end="$end_marker" -v content="$new_content" '
-            $0 ~ start {print; print content; in_block = 1; next}
-            in_block && $0 ~ end {in_block = 0; print}
+            $0 ~ start {print; print content; in_block=1; next}
+            in_block && $0 ~ end {in_block=0; print}
             !in_block {print}
-            ' "$target" > tmpfile && mv tmpfile "$target"
+            ' "$target_file" > tmpfile && mv tmpfile "$target_file"
         }
 
         for i in "${!sources[@]}"; do
@@ -59,13 +62,13 @@ jobs:
             start_marker="${start_markers[$i]}"
             end_marker="${end_markers[$i]}"
 
-            IFS=" ## " read -r source marker <<< "$source_and_marker"
+            IFS=" ## " read -r source_file section_header <<< "$source_and_marker"
 
-            new_content=$(extract_section "$source" "$marker")
+            new_content=$(extract_section "$source_file" "$section_header")
             
             replace_in_file "$target" "$start_marker" "$end_marker" "$new_content"
 
-            echo "Synced $marker from $source to $target between $start_marker and $end_marker"
+            echo "Synced $section_header from $source_file to $target between $start_marker and $end_marker"
         done
 
     - name: Commit Changes
