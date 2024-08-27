@@ -5,6 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   sync-readmes:
@@ -16,7 +18,7 @@ jobs:
 
     - name: Clone Source Repositories
       run: |
-          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git source-repo-1
+        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git source-repo-1
 
     - name: Extract and Sync README Sections
       id: sync
@@ -56,6 +58,8 @@ jobs:
             ' "$target_file" > tmpfile && mv tmpfile "$target_file"
         }
 
+        changes_made=false
+
         for i in "${!sources[@]}"; do
             source_and_marker="${sources[$i]}"
             target="${targets[$i]}"
@@ -65,17 +69,29 @@ jobs:
             IFS=" ## " read -r source_file section_header <<< "$source_and_marker"
 
             new_content=$(extract_section "$source_file" "$section_header")
-            
-            replace_in_file "$target" "$start_marker" "$end_marker" "$new_content"
 
-            echo "Synced $section_header from $source_file to $target between $start_marker and $end_marker"
+            current_content=$(awk -v start="$start_marker" -v end="$end_marker" '
+            $0 ~ start {in_block=1; next}
+            in_block && $0 ~ end {in_block=0}
+            in_block {print}
+            ' "$target")
+
+            if [ "$new_content" != "$current_content" ]; then
+                changes_made=true
+                replace_in_file "$target" "$start_marker" "$end_marker" "$new_content"
+                echo "Synced $section_header from $source_file to $target between $start_marker and $end_marker"
+            else
+                echo "No changes for $section_header in $source_file"
+            fi
         done
 
+        echo "::set-output name=changes_made::$changes_made"
+
     - name: Commit Changes
+      if: steps.sync.outputs.changes_made == 'true'
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add .
         git commit -m "Automated sync of README sections from multiple repositories"
         git push
-      if: success()
