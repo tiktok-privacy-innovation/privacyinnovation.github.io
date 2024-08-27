@@ -11,6 +11,7 @@ description: "Prepare your development environment, quick start and basic tutori
 
 ### Requirements
 <!-- start-petace-requirements -->
+## Requirements
 
 | System | Toolchain                                             |
 |--------|-------------------------------------------------------|
@@ -65,5 +66,35 @@ Output binaries can be found in `build/python/wheel/` directory.
 For more compilation options, such as enabling IPCL and network agents, please refer to [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo) and [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network).
 
 For instructions on how to run examples of PETAce, please refer to the instructions in the example directory.
+
+## Contribution
+
+Please check [Contributing](CONTRIBUTING.md) for more details.
+
+## Code of Conduct
+
+Please check [Code of Conduct](CODE_OF_CONDUCT.md) for more details.
+
+## License
+
+This project is licensed under the [Apache-2.0 License](LICENSE).
+
+## Citing PETAce
+
+To cite PETAce in academic papers, please use the following BibTeX entries.
+
+### Version 0.3.0
+
+```tex
+    @misc{petace,
+        title = {PETAce (release 0.3.0)},
+        howpublished = {url{https://github.com/tiktok-privacy-innovation/PETAce}},
+        month = Jun,
+        year = 2024,
+        note = {TikTok Pte. Ltd.},
+        key = {PETAce}
+    }
+```
+<!-- end-petace-requirements -->
 <!-- end-petace-requirements -->
 <!-- end-petace-requirements -->
