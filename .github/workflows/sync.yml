@@ -23,6 +23,7 @@ jobs:
     - name: Extract and Sync README Sections
       id: sync
       run: |
+        # Define source, target, markers, and header levels
         sources=(
           "petace-repo/README.md"
         )
@@ -36,15 +37,19 @@ jobs:
           "<!-- end-petace-overview -->"
         )
 
-        extract_section() {
+        # Extract content between headers
+        extract_all_sections() {
             local source_file=$1
-            local start_header=$2
-            local end_header=$3
+            local output=""
 
-            awk -v start="$start_header" -v end="$end_header" '
-            $0 ~ start {flag=1; next}
-            $0 ~ end {flag=0; exit}
-            flag {print}
+            awk '
+            BEGIN {header=""; content="";}
+            /^# / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            /^## / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            /^### / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            /^#### / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            {content = content "\n" $0}
+            END {if (header) {print ""; print header "\n" content}}
             ' "$source_file"
         }
 
@@ -59,20 +64,6 @@ jobs:
             in_block && $0 ~ end {in_block=0; print}
             !in_block {print}
             ' "$target_file" > tmpfile && mv tmpfile "$target_file"
-        }
-
-        extract_all_sections() {
-            local source_file=$1
-            local output=""
-
-            awk '
-            /^# / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
-            /^## / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
-            /^### / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
-            /^#### / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
-            {content = content "\n" $0}
-            END {if (header) {print ""; print header "\n" content}}
-            ' "$source_file"
         }
 
         changes_made=false
