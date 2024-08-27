@@ -35,10 +35,6 @@ jobs:
         end_markers=(
           "<!-- end-petace-overview -->"
         )
-        headers=(
-          "# PETAce"
-          "## Requirements"
-        )
 
         extract_section() {
             local source_file=$1
@@ -46,8 +42,8 @@ jobs:
             local end_header=$3
 
             awk -v start="$start_header" -v end="$end_header" '
-            $0 ~ start {flag=1; next} 
-            /^# / {if (flag) {flag=0; exit}} 
+            $0 ~ start {flag=1; next}
+            $0 ~ end {flag=0; exit}
             flag {print}
             ' "$source_file"
         }
@@ -65,6 +61,18 @@ jobs:
             ' "$target_file" > tmpfile && mv tmpfile "$target_file"
         }
 
+        extract_all_sections() {
+            local source_file=$1
+
+            awk '
+            /^# / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            /^## / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            /^### / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            {content = content "\n" $0}
+            END {if (header) {print ""; print header "\n" content}}
+            ' "$source_file"
+        }
+
         changes_made=false
 
         for i in "${!sources[@]}"; do
@@ -73,17 +81,7 @@ jobs:
             start_marker="${start_markers[$i]}"
             end_marker="${end_markers[$i]}"
 
-            new_content=""
-
-            for ((j=0; j<${#headers[@]}-1; j++)); do
-                header1="${headers[$j]}"
-                header2="${headers[$((j+1))]}"
-
-                extracted=$(extract_section "$source_file" "$header1" "$header2")
-                new_content+="$extracted\n"
-
-                echo "Extracted content from $source_file between $header1 and $header2"
-            done
+            new_content=$(extract_all_sections "$source_file")
 
             current_content=$(awk -v start="$start_marker" -v end="$end_marker" '
             $0 ~ start {in_block=1; next}
