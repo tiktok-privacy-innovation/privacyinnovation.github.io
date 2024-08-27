@@ -63,11 +63,13 @@ jobs:
 
         extract_all_sections() {
             local source_file=$1
+            local output=""
 
             awk '
             /^# / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
             /^## / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
             /^### / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
+            /^#### / {if (header) {print ""; print header "\n" content}; header=$0; content=""; next}
             {content = content "\n" $0}
             END {if (header) {print ""; print header "\n" content}}
             ' "$source_file"
