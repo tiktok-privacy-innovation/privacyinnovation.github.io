@@ -24,29 +24,38 @@ jobs:
       id: sync
       run: |
         sources=(
-          "petace-repo/README.md ## Requirements"
           "petace-repo/README.md # PETAce"
+          "petace-repo/README.md ## Requirements"
         )
         targets=(
-          "content/en/docs/petace/Getting started/_index.md"
           "content/en/docs/petace/Overview/_index.md"
+          "content/en/docs/petace/Getting started/_index.md"
         )
         start_markers=(
-          "<!-- start-petace-requirements -->"
           "<!-- start-petace-overview -->"
+          "<!-- start-petace-requirements -->"
         )
         end_markers=(
-          "<!-- end-petace-requirements -->"
           "<!-- end-petace-overview -->"
+          "<!-- end-petace-requirements -->"
         )
 
         extract_section() {
             local source_file=$1
-            local section_header=$2
-            awk -v header="$section_header" '
-            $0 ~ header {flag=1; next} 
-            /^## / {flag=0} 
-            flag {print}' "$source_file"
+            local start_header=$2
+            local start_level=$(echo "$start_header" | awk '{print length($1)}')
+            local next_header_level
+            local start_flag=0
+
+            awk -v start="$start_header" -v start_level="$start_level" '
+            function get_heading_level(heading) {
+                return length(heading) - length(gsub(/[^#]/, "", heading)) + 1
+            }
+            $0 ~ start {start_flag=1; next}
+            start_flag && /^# / {next_header_level = get_heading_level($0)}
+            start_flag && /^#/ && get_heading_level($0) > start_level {exit}
+            start_flag {print}
+            ' "$source_file"
         }
 
         replace_in_file() {
@@ -70,7 +79,7 @@ jobs:
             start_marker="${start_markers[$i]}"
             end_marker="${end_markers[$i]}"
 
-            IFS=" ## " read -r source_file section_header <<< "$source_and_marker"
+            IFS=" # " read -r source_file section_header <<< "$source_and_marker"
 
             new_content=$(extract_section "$source_file" "$section_header")
 
