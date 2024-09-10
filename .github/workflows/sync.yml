@@ -60,7 +60,7 @@ jobs:
 
             awk -v start="$start_marker" -v end="$end_marker" -v content="$new_content" '
             $0 ~ start {print; print content; in_block=1; next}
-            in_block && $0 ~ end {in_block=0; print}
+            in_block && $0 ~ end {in_block=0; print end; next}
             !in_block {print}
             ' "$target_file" > tmpfile && mv tmpfile "$target_file"
         }
@@ -92,10 +92,10 @@ jobs:
             fi
         done
 
-        echo "::set-output name=changes_made::$changes_made"
+        echo "changes_made=$changes_made" >> $GITHUB_ENV
 
     - name: Commit Changes
-      if: steps.sync.outputs.changes_made == 'true'
+      if: env.changes_made == 'true'
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
