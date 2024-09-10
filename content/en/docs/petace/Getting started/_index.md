@@ -7,9 +7,11 @@ description: "Prepare your development environment, quick start and basic tutori
 ---
 
 
-## PETAce-Solo
+## PETAce
 
 ### Requirements
-<!-- start-petace-requirements -->
+<!-- start-petace-getting-started -->
 
-<!-- end-petace-requirements -->
+Test
+
+<!-- end-petace-getting-started -->

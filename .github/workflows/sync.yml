@@ -35,18 +35,22 @@ jobs:
         source_start_markers=(
           "<!-- start-petace-overview -->"
           "<!-- start-shadowgraphy-overview -->"
+          <!-- start-petace-getting-started -->
         )
         source_end_markers=(
           "<!-- end-petace-overview -->"
           "<!-- end-shadowgraphy-overview -->"
+          <!-- end-petace-getting-started -->
         )
         target_start_markers=(
           "<!-- start-petace-overview -->"
           "<!-- start-shadowgraphy-overview -->"
+          <!-- start-petace-getting-started -->
         )
         target_end_markers=(
           "<!-- end-petace-overview -->"
           "<!-- end-shadowgraphy-overview -->"
+          <!-- end-petace-getting-started -->
         )
 
         extract_content() {
