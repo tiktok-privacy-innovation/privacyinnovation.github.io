@@ -19,27 +19,35 @@ jobs:
     - name: Clone Source Repositories
       run: |
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git petace-repo
+        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com:tiktok-privacy-innovation/Shadowgraphy.git shadowgraphy-repo
+        
 
     - name: Extract and Sync README Sections
       id: sync
       run: |
         sources=(
           "petace-repo/README.md"
+          "shadowgraphy-repo/README.md"
         )
         targets=(
           "content/en/docs/petace/Overview/_index.md"
+          "content/en/docs/shadowgraphy/overview/_index.md"
         )
         source_start_markers=(
           "<!-- start-petace-content -->"
+          "<!-- start-shadowgraphy-content -->"
         )
         source_end_markers=(
           "<!-- end-petace-content -->"
+          "<!-- end-shadowgraphy-content -->"
         )
         target_start_markers=(
           "<!-- start-petace-overview -->"
+          "<!-- start-shadowgraphy-overview -->"
         )
         target_end_markers=(
           "<!-- end-petace-overview -->"
+          "<!-- end-shadowgraphy-overview -->"
         )
 
         extract_content() {
