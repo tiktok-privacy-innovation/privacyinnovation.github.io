@@ -19,7 +19,7 @@ jobs:
     - name: Clone Source Repositories
       run: |
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git petace-repo
-        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com:tiktok-privacy-innovation/Shadowgraphy.git shadowgraphy-repo
+        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/Shadowgraphy.git shadowgraphy-repo
         
 
     - name: Extract and Sync README Sections
