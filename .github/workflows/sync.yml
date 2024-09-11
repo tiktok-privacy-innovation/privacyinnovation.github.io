@@ -35,8 +35,8 @@ jobs:
         targets=(
           "content/en/docs/petace/Overview/_index.md"
           "content/en/docs/petace/Getting started/_index.md"
-          "content/en/docs/petace-solo/Overview/_index.md"
-          "content/en/docs/petace-solo/Getting started/_index.md"
+          "content/en/docs/petace/petace-solo/Overview/_index.md"
+          "content/en/docs/petace/petace-solo/Getting started/_index.md"
           "content/en/docs/shadowgraphy/overview/_index.md"
         )
         source_start_markers=(
