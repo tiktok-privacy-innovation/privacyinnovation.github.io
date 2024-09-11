@@ -20,6 +20,7 @@ jobs:
       run: |
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce.git petace-repo
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/shadowgraphy.git shadowgraphy-repo
+        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce-Solo.git petace-solo-repo
 
     - name: Extract and Sync README Sections
       id: sync
@@ -27,31 +28,43 @@ jobs:
         sources=(
           "petace-repo/README.md"
           "petace-repo/README.md"
+          "petace-solo-repo/README.md"
+          "petace-solo-repo/README.md"
           "shadowgraphy-repo/README.md"
         )
         targets=(
           "content/en/docs/petace/Overview/_index.md"
           "content/en/docs/petace/Getting started/_index.md"
+          "content/en/docs/petace-solo/Overview/_index.md"
+          "content/en/docs/petace-solo/Getting started/_index.md"
           "content/en/docs/shadowgraphy/overview/_index.md"
         )
         source_start_markers=(
           "<!-- start-petace-overview -->"
           "<!-- start-petace-getting-started -->"
+          "<!-- start-petace-solo-overview -->"
+          "<!-- start-petace-solo-getting-started -->"
           "<!-- start-shadowgraphy-overview -->"
         )
         source_end_markers=(
           "<!-- end-petace-overview -->"
           "<!-- end-petace-getting-started -->"
+          "<!-- end-petace-solo-overview -->"
+          "<!-- end-petace-solo-getting-started -->"
           "<!-- end-shadowgraphy-overview -->"
         )
         target_start_markers=(
           "<!-- start-petace-overview -->"
           "<!-- start-petace-getting-started -->"
+          "<!-- start-petace-solo-overview -->"
+          "<!-- start-petace-solo-getting-started -->"
           "<!-- start-shadowgraphy-overview -->"
         )
         target_end_markers=(
           "<!-- end-petace-overview -->"
           "<!-- end-petace-getting-started -->"
+          "<!-- end-petace-solo-overview -->"
+          "<!-- end-petace-solo-getting-started -->"
           "<!-- end-shadowgraphy-overview -->"
         )
 
