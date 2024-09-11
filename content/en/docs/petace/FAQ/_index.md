@@ -1,7 +1,7 @@
 ---
 title: "FAQ"
 linkTitle: "FAQ"
-weight: 4
+weight: 6
 keywords: ["PETAce", "FAQ"]
 description: "Frequently Asked Questions and Answers."
 ---
