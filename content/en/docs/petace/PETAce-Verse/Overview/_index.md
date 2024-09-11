@@ -6,7 +6,7 @@ keywords: ["PETAce-Verse"]
 description: ""
 ---
 
-## PETAce-Verce
+## PETAce-Verse
 <!-- start-petace-verse-overview -->
 
 PETAce-Verse is a collection of primitive cryptographic protocols.
