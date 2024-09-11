@@ -1,8 +1,8 @@
 ---
-title: "PETAce-SetOps"
-linkTitle: "PETAce-SetOps"
+title: "PETAce-Network"
+linkTitle: "PETAce-Network"
 weight: 7
-keywords: ["PETAce-SetOps"]
+keywords: ["PETAce-Network"]
 description:
 ---
 
