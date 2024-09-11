@@ -26,31 +26,33 @@ jobs:
       run: |
         sources=(
           "petace-repo/README.md"
+          "petace-repo/README.md"
           "shadowgraphy-repo/README.md"
         )
         targets=(
           "content/en/docs/petace/Overview/_index.md"
+          "content/en/docs/petace/Getting started/_index.md"
           "content/en/docs/shadowgraphy/overview/_index.md"
         )
         source_start_markers=(
           "<!-- start-petace-overview -->"
-          "<!-- start-shadowgraphy-overview -->"
           "<!-- start-petace-getting-started -->"
+          "<!-- start-shadowgraphy-overview -->"
         )
         source_end_markers=(
           "<!-- end-petace-overview -->"
-          "<!-- end-shadowgraphy-overview -->"
           "<!-- end-petace-getting-started -->"
+          "<!-- end-shadowgraphy-overview -->"
         )
         target_start_markers=(
           "<!-- start-petace-overview -->"
-          "<!-- start-shadowgraphy-overview -->"
           "<!-- start-petace-getting-started -->"
+          "<!-- start-shadowgraphy-overview -->"
         )
         target_end_markers=(
           "<!-- end-petace-overview -->"
-          "<!-- end-shadowgraphy-overview -->"
           "<!-- end-petace-getting-started -->"
+          "<!-- end-shadowgraphy-overview -->"
         )
 
         extract_content() {
