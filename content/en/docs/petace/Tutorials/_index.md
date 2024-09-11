@@ -1,7 +1,7 @@
 ---
 title: "Tutorials"
 linkTitle: "Tutorials"
-weight: 3
+weight: 5
 keywords: ["PETAce", "Tutorials"]
 description: Guides and tutorials for PETAce.
 ---
