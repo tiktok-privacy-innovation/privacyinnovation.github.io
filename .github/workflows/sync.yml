@@ -23,6 +23,7 @@ jobs:
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce-Solo.git petace-solo-repo
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce-Verse.git petace-verse-repo
         git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce-Duet.git petace-duet-repo
+        git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/tiktok-privacy-innovation/PETAce-SetOps.git petace-setops-repo
 
     - name: Extract and Sync README Sections
       id: sync
@@ -36,6 +37,8 @@ jobs:
           "petace-verse-repo/README.md"
           "petace-duet-repo/README.md"
           "petace-duet-repo/README.md"
+          "petace-setops-repo/README.md"
+          "petace-setops-repo/README.md"
           "shadowgraphy-repo/README.md"
         )
         targets=(
@@ -47,6 +50,8 @@ jobs:
           "content/en/docs/petace/PETAce-Verse/Getting started/_index.md"
           "content/en/docs/petace/PETAce-Duet/Overview/_index.md"
           "content/en/docs/petace/PETAce-Duet/Getting started/_index.md"
+          "content/en/docs/petace/PETAce-SetOps/Overview/_index.md"
+          "content/en/docs/petace/PETAce-SetOps/Getting started/_index.md"
           "content/en/docs/shadowgraphy/overview/_index.md"
         )
         source_start_markers=(
@@ -58,6 +63,8 @@ jobs:
           "<!-- start-petace-verse-getting-started -->"
           "<!-- start-petace-duet-overview -->"
           "<!-- start-petace-duet-getting-started -->"
+          "<!-- start-petace-setops-overview -->"
+          "<!-- start-petace-setops-getting-started -->"
           "<!-- start-shadowgraphy-overview -->"
         )
         source_end_markers=(
@@ -69,6 +76,8 @@ jobs:
           "<!-- end-petace-verse-getting-started -->"
           "<!-- end-petace-duet-overview -->"
           "<!-- end-petace-duet-getting-started -->"
+          "<!-- end-petace-setops-overview -->"
+          "<!-- end-petace-setops-getting-started -->"
           "<!-- end-shadowgraphy-overview -->"
         )
         target_start_markers=(
@@ -80,6 +89,8 @@ jobs:
           "<!-- start-petace-verse-getting-started -->"
           "<!-- start-petace-duet-overview -->"
           "<!-- start-petace-duet-getting-started -->"
+          "<!-- start-petace-setops-overview -->"
+          "<!-- start-petace-setops-getting-started -->"
           "<!-- start-shadowgraphy-overview -->"
         )
         target_end_markers=(
@@ -91,6 +102,8 @@ jobs:
           "<!-- end-petace-verse-getting-started -->"
           "<!-- end-petace-duet-overview -->"
           "<!-- end-petace-duet-getting-started -->"
+          "<!-- end-petace-setops-overview -->"
+          "<!-- end-petace-setops-getting-started -->"
           "<!-- end-shadowgraphy-overview -->"
         )
 
