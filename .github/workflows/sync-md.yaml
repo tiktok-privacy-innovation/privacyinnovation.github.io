@@ -1,0 +1,35 @@
+name: Sync README sections from source repositories
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          path: main
+          fetch-depth: 2
+
+      - name: "Checkout upstream: PETAce"
+        uses: actions/checkout@v4
+        with:
+          repository: tiktok-privacy-innovation/PETAce
+          path: PETAce
+
+      - name: "Checkout upstream: shadowgraphy"
+        uses: actions/checkout@v4
+        with:
+          repository: tiktok-privacy-innovation/shadowgraphy
+          path: shadowgraphy
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run script
+        run: node main/scripts/sync-readme.js --commit
+  
