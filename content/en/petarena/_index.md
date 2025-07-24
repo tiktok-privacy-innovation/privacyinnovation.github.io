@@ -1,112 +1,98 @@
 ---
 title: "The Privacy Breach Challenge: A Hands-On CTF"
-date: 2025-07-22T23:00:00Z
+date: 2025-07-24T16:40:31Z
 draft: false
+linkTitle: "Competition"
+weight: 30
 ---
 
-<!-- A short, exciting summary to hook the reader -->
-A hands-on Capture The Flag (CTF) competition where you get to break state-of-the-art privacy protection mechanisms. Assume the role of a malicious analyst, design novel attacks in a simulated database environment, and prove your skills.
+A hands-on CTF competition with the objective of breaking privacy protection mechanisms (e.g., differential privacy) with various techniques, including machine learning, in an interactive database setting. Participants will gain access to a simulated DBS with various static and evolving datasets through a query client, and assume the role of malicious analysis.
 
-<!-- 
-  A prominent Call-to-Action (CTA) button. 
-  NOTE: The class="button" assumes your site has a CSS style for buttons. 
-  If it doesn't work, it will still be a functional link.
--->
 <p style="text-align: center;">
-  <a href="YOUR_APPLICATION_LINK_HERE" class="button" style="font-size: 1.2em; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Apply Now &rarr;</a>
+  <a href="YOUR_APPLICATION_LINK_HERE" class="button" style="font-size: 1.2em; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Submit Application &rarr;</a>
   <br><strong>Final Deadline:</strong> September 10th, 2025
 </p>
 
+## 🎯 The Challenge: 5 Missions in 3 Tracks
+
+Participants will design and execute novel or known privacy attacks through 5 missions in 3 tracks. The tracks and missions are of various difficulty levels and invite participants to:
+- Detect database membership
+- Infer sensitive attributes
+- Reconstruct sensitive user records
+- Link records across tables
+- Launch other innovative attacks in an Open Mission
 
 ## 🏆 Prizes & Recognition
 
-A panel of cybersecurity and privacy experts will judge the innovative approach and technical soundness of attacks. We are proud to offer the following awards:
+A panel of cybersecurity and privacy experts will judge the innovative approach and technical soundness of attacks, and award the most successful teams/individuals based on the following prizes:
 
-| Placement         | Prize      |
-|-------------------|------------|
+| Placement         | Prize       |
+|-------------------|-------------|
 | **1st Place**     | **$10,000** |
-| **2nd Place**     | $5,000     |
-| **3rd Place**     | $2,000     |
-| **4th Place**     | $100       |
-| **5th Place**     | $500       |
-| Honorable Mentions| Recognition|
+| **2nd Place**     | $5,000      |
+| **3rd Place**     | $2,000      |
+| **4th Place**     | $1,000      |
+| **5th Place**     | $500        |
+| Honorable Mentions| Recognition |
 | *All Participants*| *Certificate of Completion (for at least one mission)* |
 
-
-## 🎯 The Challenge: 5 Missions, 3 Tracks
-
-Participants will gain access to a simulated database with various static and evolving datasets. Your objective is to design and execute privacy attacks across five missions of varying difficulty.
-
-- **Detect** database membership.
-- **Infer** sensitive attributes.
-- **Reconstruct** sensitive user records.
-- **Link** records across tables.
-- **Innovate** in an Open Mission to showcase a novel attack.
-
 ---
-
-## 📅 Contest Timeline
-
-Mark your calendars for these key dates. The entire contest runs for 50 days.
-
-| Event                     | Date                       |
-|---------------------------|----------------------------|
-| **Official Kick-Off**     | August 1st, 2025           |
-| **Application Deadline**  | September 10th, 2025       |
-| **Mission Completion**    | September 19th, 2025       |
-| **Winners Notified**      | By October 25th, 2025      |
-| **Award Ceremony**        | TBD (Hybrid Event)         |
-
-> **Travel Support:** A limited, need-based travel budget is available for top teams invited to the award ceremony. Please make your request upon notification.
 
 ## How to Join the Challenge
 
+We invite any privacy, security, machine learning, and/or data expert, researchers, and engineers to participate. We especially encourage undergraduate or graduate students in related fields to apply.
+
 > ### Who Can Apply?
-> We invite privacy, security, machine learning, and data experts from all backgrounds. We especially encourage undergraduate and graduate students to apply.
-> - **Teams of 1–4 members** are welcome.
-> - Open to students, researchers, and industry professionals from **anywhere in the world**.
+> Teams of 1–4 members (students, researchers, industry professionals) with expertise in privacy, security, ML, or data engineering from anywhere around the world.
 
 > ### How to Apply?
-> Applications are reviewed on a rolling basis. **Submit your application via this link.**
+> Submit your application via **[this link](YOUR_APPLICATION_LINK_HERE)**. Applications will be reviewed on a rolling basis. The final deadline to apply is **September 10th, 2025**.
 >
-> Your application should include:
-> 1.  Team bios (names, affiliations, roles) and a designated Team Lead.
+> **Applications should include:**
+> 1.  Team bios (names, affiliations, roles).
 > 2.  A valid contact email.
-> 3.  CVs for all team members.
-> 4.  (Optional) Code samples or links to prior work (e.g., GitHub).
+> 3.  CVs of all team members.
+> 4.  A designated Team Lead.
+> 5.  (Optional) Code samples or prior work (GitHub links are accepted).
 
----
+## 📅 Contest Details
+
+The contest has a total duration of 50 days, with an official kick-off on **August 1st, 2025**. All missions should be completed by no later than **September 19, 2025** (anywhere in the world). Successful teams will be notified by October 25th and will be invited for a hybrid award ceremony (location to be determined).
+
+<!-- 
+  IMPORTANT NOTE: The line below about a travel budget contradicts the FAQ. 
+  Please remove or edit this sentence to be consistent.
+-->
+A limited need-basis travel budget is available upon request.
 
 ## ⚖️ Selection & Scoring Criteria
 
-Success is measured by a comprehensive scoring matrix that quantifies performance. The only subjective judgment is for the "Open Mission" track, available after achieving a minimum score in other missions.
+Success in this hackathon is measured by a comprehensive scoring matrix that objectively quantifies participant performance across each mission. The only area involving subjective judgment is the "Open Ended Exploration" mission within Track 3, which will be available to participants who successfully gather a minimum score in lower missions and tracks.
 
 Scoring will consider the following criteria:
-1.  **Type of attack** and the severity of the privacy compromise.
-2.  **Attack metrics** (e.g., TPR, FPR, AUC, MSE).
-3.  **Attack detectability** (i.e., stealth).
-4.  **Attack complexity** and novelty.
-5.  **Attacker's strength** and assumed prior knowledge.
-6.  **Attack robustness** against different levels of privacy protection.
+1.  Type of attack and privacy compromise
+2.  Attack metrics (e.g., TPR, FPR, AUC, MSE, etc.)
+3.  Attack detectability
+4.  Attack complexity
+5.  Attacker's strength and prior knowledge
+6.  Attack robustness to different levels and types of privacy protection mechanisms
 
 ## ❓ Frequently Asked Questions (FAQ)
 
 **Q: Can solo applicants apply?**
-<br>A: Yes! Individuals are welcome, but we encourage teams of 2–4 to bring diverse expertise to the challenge.
+<br>A: Yes! Individuals are welcome, but teams of 2–4 are encouraged for diverse expertise.
 
-**Q: Is travel funding available for the award ceremony?**
-<br>A: Limited travel stipends are available for top-placing teams based on need. Others are encouraged to seek support from their home institutions.
+**Q: Is travel funding available?**
+<br>A: No. Teams are incentivized to seek support from their institutions.
 
-**Q: Are non-academic or industry teams eligible?**
-<br>A: Absolutely. We welcome industry professionals and independent researchers.
+**Q: Are non-academic teams eligible?**
+<br>A: Absolutely—industry professionals and independent researchers are welcome.
 
-**Q: What kind of datasets will we be attacking?**
-<br>A: You will work with a combination of synthetic data and public, real-world datasets adapted for the competition.
+**Q: What datasets will we use?**
+<br>A: Synthetic and public real-world data.
 
 ---
 
 <p style="text-align: center; font-size: 1.1em;">
-  Have a question? Don't hesitate to contact Guzzo at <a href="mailto:guzzo@tiktok.com">guzzo@tiktok.com</a>.
-  <br><br>
-  <a href="YOUR_APPLICATION_LINK_HERE" class="button" style="font-size: 1.2em; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Ready to Compete? Apply Now &rarr;</a>
+  If you have any questions, do not hesitate to contact Guzzo at <a href="mailto:guzzo@tiktok.com">guzzo@tiktok.com</a>.
 </p>
