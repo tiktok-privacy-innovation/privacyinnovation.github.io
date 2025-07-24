@@ -6,9 +6,9 @@ linkTitle: "Competition"
 weight: 30
 ---
 
-** PET ARENA: Differential Privacy CTF Competition **
+## PET ARENA: Differential Privacy CTF Competition
 
-A hands-on CTF competition with the objective of breaking privacy protection mechanisms (e.g., differential privacy) with various techniques, including machine learning, in an interactive database setting. Participants will gain access to a simulated DBS with various static and evolving datasets through a query client, and assume the role of malicious analysis.
+A hands-on CTF competition with the objective of breaking privacy protection mechanisms (e.g., differential privacy) with various techniques, including machine learning, in an interactive database setting. Participants will gain access to a simulated DBS with various static and evolving datasets through a query client, and assume the role of malicious analyst.
 
 Participants will design and execute novel or known privacy attacks through 5 missions in 3 tracks. The tracks and missions are of various difficulty levels and invite participants to detect database membership, infer sensitive attributes, reconstruct sensitive user records, link records across tables, and other innovative attacks in an Open Mission. 
 
@@ -22,6 +22,10 @@ A panel of cybersecurity and privacy experts will judge the innovative approach 
   - Certificates for participants who have completed at least one mission.
 
 We invite any privacy, security, machine learning, and/or data expert, research, and engineers to participate by submitting a credentials application using this link. We especially encourage undergraduate or graduate students in the fields of privacy, security, data science, ML, and engineering or related fields to apply.
+
+<p style="text-align: center;">
+  <a href="https://forms.gle/QUNnCsfLitHBKTfeA" class="button" style="font-size: 1.2em; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Submit Application &rarr;</a>
+</p>
 
 *Who can apply?*
 Teams of 1–4 members (students, researchers, industry professionals) with expertise in privacy, security, ML, or data engineering from anywhere around the world. 
