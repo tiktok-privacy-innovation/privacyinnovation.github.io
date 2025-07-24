@@ -1,7 +1,9 @@
 ---
 title: "PET ARENA: Differential Privacy CTF Competition"
-date: 2025-07-24T08:00:00Z
+date: 2025-07-22T23:00:00Z
 draft: false
+linkTitle: "Competition"
+weight: 30
 ---
 
 A hands-on CTF competition with the objective of breaking privacy protection mechanisms (e.g., differential privacy) with various techniques, including machine learning, in an interactive database setting. Participants will gain access to a simulated DBS with various static and evolving datasets through a query client, and assume the role of malicious analysis.
