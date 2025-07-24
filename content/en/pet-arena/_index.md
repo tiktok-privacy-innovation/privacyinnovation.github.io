@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 ## PET ARENA: Differential Privacy CTF Competition
 
 A hands-on CTF competition with the objective of breaking privacy protection mechanisms (e.g., differential privacy) with various techniques, including machine learning, in an interactive database setting. Participants will gain access to a simulated DBS with various static and evolving datasets through a query client, and assume the role of malicious analyst.
