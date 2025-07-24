@@ -47,6 +47,8 @@ Scoring will consider the following critera:
 4. Attack complexity
 5. Attacker's strength and prior knowledge
 6. Atack robustness to different levels and types of privacy protection mechanisms
+
+
 If you have any questions, do not hestitate to contact Guzzo at guzzo@tiktok.com. 
 
 *FAQ*
