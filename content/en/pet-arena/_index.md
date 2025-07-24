@@ -14,7 +14,7 @@ A hands-on CTF competition with the objective of breaking privacy protection mec
 Participants will design and execute novel or known privacy attacks through 5 missions in 3 tracks. The tracks and missions are of various difficulty levels and invite participants to detect database membership, infer sensitive attributes, reconstruct sensitive user records, link records across tables, and other innovative attacks in an Open Mission.
 
 
-<p style="text-align: center;">
+<p style="text-align: left;">
   <a href="https://forms.gle/QUNnCsfLitHBKTfeA" class="button" style="font-size: 1.2em; padding: 12px 24px; background-color: #000000; color: white; text-decoration: none; border-radius: 5px;">Submit Application &rarr;</a>
 </p>
 
