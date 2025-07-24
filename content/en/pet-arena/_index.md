@@ -52,13 +52,21 @@ Scoring will consider the following critera:
 If you have any questions, do not hestitate to contact Guzzo at guzzo@tiktok.com. 
 
 *FAQ*
+
 Q: Can solo applicants apply?
+
 A: Yes! Individuals are welcome, but teams of 2–4 are encouraged for diverse expertise.
+
 Q: Is travel funding available?
+
 A: No. Teams are incentivized to seek support from their institutions.
+
 Q: Are non-academic teams eligible?
+
 A: Absolutely—industry professionals and independent researchers are welcome.
+
 Q: What datasets will we use?
+
 A: Synthetic and public real-world data.
 
 
