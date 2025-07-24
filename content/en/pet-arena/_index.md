@@ -7,7 +7,7 @@ weight: 40
 layout: page
 ---
 
-PET ARENA: Differential Privacy CTF Competition
+## PET ARENA: Differential Privacy CTF Competition
 
 A hands-on CTF competition with the objective of breaking privacy protection mechanisms (e.g., differential privacy) with various techniques, including machine learning, in an interactive database setting. Participants will gain access to a simulated DBS with various static and evolving datasets through a query client, and assume the role of malicious analysis.
 
@@ -19,7 +19,7 @@ Participants will design and execute novel or known privacy attacks through 5 mi
 </p>
 
 
-## Prizes & Recognition
+### Prizes & Recognition
 
 A panel of cybersecurity and privacy experts will judge the innovative approach and technical soundness of attacks, and award the most successful teams/individuals based on the following prizes:
 
@@ -35,7 +35,7 @@ A panel of cybersecurity and privacy experts will judge the innovative approach 
 
 ---
 
-## How to Join
+### How to Join
 
 We invite any privacy, security, machine learning, and/or data expert, research, and engineers to participate by submitting a credentials application using **[this link](https://forms.gle/QUNnCsfLitHBKTfeA)**. We especially encourage undergraduate or graduate students in the fields of privacy, security, data science, ML, and engineering or related fields to apply.
 
@@ -52,11 +52,11 @@ Applications should include:
 - Team Lead (if Team)
 - Code samples or prior work (GitHub links accepted). This is optional.
 
-## Contest details
+### Contest details
 
 The contest has a total duration of 50 days, with an official kick-off on **August 1st 2025**. All missions should be completed by no later than **September 19, 2025** (anywhere in the world). Successful teams will be notified by **October 25th** and will be invited for a hybrid award ceremony (location to be determined).
 
-## Selection Criteria
+### Selection Criteria
 
 Success in this hackathon is measured by a comprehensive scoring matrix that objectively quantifies participant performance across each mission. The only area involving subjective judgment is the "Open Ended Exploration" mission within Track 3, which will be available to participants who successfully gather a minimum score in lower missions and tracks.
 
@@ -68,7 +68,7 @@ Scoring will consider the following critera:
 5. Attacker's strength and prior knowledge
 6. Atack robustness to different levels and types of privacy protection mechanisms
 
-## FAQ
+### FAQ
 
 **Q: Can solo applicants apply?**
 <br>A: Yes! Individuals are welcome, but teams of 2–4 are encouraged for diverse expertise.
