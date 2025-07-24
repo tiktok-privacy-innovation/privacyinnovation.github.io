@@ -1,5 +1,5 @@
 ---
-title: "Competition"
+title: "PET Arena CTF"
 date: 2025-07-24T18:00:00Z
 draft: false
 linkTitle: "Competition"
