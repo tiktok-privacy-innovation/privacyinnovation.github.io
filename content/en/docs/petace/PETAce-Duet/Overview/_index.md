@@ -20,6 +20,8 @@ As implied by the name "Duet", PETAce-Duet implements various two-party MPC prot
 
 - [Secret shared shuffle](https://link.springer.com/chapter/10.1007/978-3-030-64840-4_12). The permutation network will be available in a future release.
 
+- [Oblivious switching network](https://eprint.iacr.org/2021/243.pdf) with the random OT optimizations.
+
 - Homomorphic Encryption (HE): Duet integrates the Paillier cryptosystem to improve two-party secure computation.
 For example, HE enables efficient alternative solutions to problems such as secure shuffling and linear matrix operations.
 A generic implementation of the Paillier cryptosystem based on the GMP library is provided in PETAce-Solo.
@@ -28,6 +30,8 @@ We support the conversion between HE ciphertexts and arithmetic shares. As a res
 
 - Fully Homomorphic Encryption (FHE): Duet integrates the BFV scheme to improve two-party Beaver triple generation.
 The underlying BFV functionalities depend on Microsoft SEAL.
+
+- Discrete Gaussian Sampling: Duet leverages MPC to sample random noise according to Discrete Gaussian distribution and outputs the noise in the form of secret sharing.
 
 The core functionalities of Duet are written in C++ to provide the best performance.
 A Python interface is provided in [PETAce](https://github.com/tiktok-privacy-innovation/PETAce).

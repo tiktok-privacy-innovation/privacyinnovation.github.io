@@ -24,16 +24,17 @@ description: "Prepare your development environment, quick start and basic tutori
 | [Microsoft SEAL](https://github.com/microsoft/SEAL)                                     | 4.1.0          | Fully homomorphic encryption       |
 | [Google Logging](https://github.com/google/glog)                               | 0.4.0          | Logging                              |
 | [JSON for Modern C++(JSON)](https://github.com/nlohmann/json)                  | 3.10.1         | PSI parameter configuration          |
-| [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo)       | 0.3.0          | Cryptography primitives           |
-| [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network) | 0.3.0          | Network communication protocols   |
-| [PETAce-Verse](https://github.com/tiktok-privacy-innovation/PETAce-Verse)     | 0.3.0          | Primitive cryptographic protocols |
-| [PETAce-SetOps](https://github.com/tiktok-privacy-innovation/PETAce-SetOps)     | 0.3.0          | Set operations MPC protocol |
-| [PETAce-Verse](https://github.com/tiktok-privacy-innovation/PETAce-Duet)     | 0.3.0          | MPC protocol |
+| [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo)       | 0.4.0          | Cryptography primitives           |
+| [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network) | 0.4.0          | Network communication protocols   |
+| [PETAce-Verse](https://github.com/tiktok-privacy-innovation/PETAce-Verse)     | 0.4.0          | Primitive cryptographic protocols |
+| [PETAce-SetOps](https://github.com/tiktok-privacy-innovation/PETAce-SetOps)     | 0.4.0          | Set operations MPC protocol |
+| [PETAce-Verse](https://github.com/tiktok-privacy-innovation/PETAce-Duet)     | 0.4.0          | MPC protocol |
 
 | Optional dependency                                    | Tested version | Use                    |
 |--------------------------------------------------------|----------------|------------------------|
 | [Intel Paillier Cryptosystem Library (IPCL)](https://github.com/intel/pailliercryptolib)                                     | 495beaad1f6e70741f2b5cf1279cb919fd66d894| Paillier Encryption       |
 | [gRPC](https://github.com/grpc/grpc)                                          | 1.62.1          | Network communication              |
+| [CryptoDataEngine](https://github.com/tiktok-privacy-innovation/CryptoDataEngine) | 0.1.0 | Big data parallel support|
 
 ## Building PETAce
 

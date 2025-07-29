@@ -11,7 +11,7 @@ description: "The architecture design, features, and performance of PETAce."
 
 Privacy-Enhancing Technologies via Applied Cryptography Engineering (PETAce) is a framework for privacy-preserving computing. It provides strong privacy guarantee by analytzing and computing cryptographically pseudonymized data without revealing hidden sensitive information. It consists of the following parts:
 
-- The "user interface" layer provides users with high-level programming interfaces for collaborative data analysis (SecureNumpy), joint SQL query (SecureSQL), and privacy-preserving machine learning (SecureML).
+- The "user interface" layer provides users with high-level programming interfaces for collaborative data analysis (SecureNumpy), joint SQL query (SecureSQL), and privacy-preserving machine learning (SecureML). It also supports large-scale data computing by combining Secure Multi-party Computation and parallel processing systems (such as Spark).
 
 - The "virtual machine" layer is responsible for parsing high-level language into secure multi-party computation (MPC) operators, and performing automatic optimization and scheduling.
 
@@ -20,7 +20,7 @@ Privacy-Enhancing Technologies via Applied Cryptography Engineering (PETAce) is 
 - The "primitive" layer consists of standard cryptographic algorithms and protocols, differential privacy mechanisms, and abstract network interfaces, etc.
 
 <figure>
-<img src='https://github.com/tiktok-privacy-innovation/PETAce/blob/2b59885bb557f6db0804c7c070a75b5c56b8fe3a/images/PETAce.png' align="middle"/>
+<img src='images/PETAce.png' align="middle"/>
 </figure>
 
 PETAce enables fast prototyping of ideas based on privacy-enhancing technologies, and we plan to integrate state-of-the-art research results into the PETAce in future releases. Its core modules are implemented in C++ and are modularized into the following repositories.
@@ -48,6 +48,4 @@ PETAce enables fast prototyping of ideas based on privacy-enhancing technologies
 - [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network) provides a preliminary interface of network communication.
     - Network abstract interface
     - Socket network implementation
-
-- [Python API](python) provides Python APIs such as SecureNumpy, SecureML, SecureSQL, and SetOps.
 <!-- end-petace-overview -->

@@ -18,10 +18,10 @@ description: ""
 
 | Required dependency                                                            | Tested version | Use                                  |
 |--------------------------------------------------------------------------------|----------------|--------------------------------------|
-| [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo)        | 0.3.0          | Cryptography primitives              |
-| [PETAce-Verse](https://github.com/tiktok-privacy-innovation/PETAce-Verse)      | 0.3.0          | Primitive cryptographic protocols    |
-| [PETAce-Duet](https://github.com/tiktok-privacy-innovation/PETAce-Duet)        | 0.3.0          | Two-party secure computing protocols |
-| [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network)  | 0.3.0          | Network communication protocols      |
+| [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo)        | 0.4.0          | Cryptography primitives              |
+| [PETAce-Verse](https://github.com/tiktok-privacy-innovation/PETAce-Verse)      | 0.4.0          | Primitive cryptographic protocols    |
+| [PETAce-Duet](https://github.com/tiktok-privacy-innovation/PETAce-Duet)        | 0.4.0          | Two-party secure computing protocols |
+| [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network)  | 0.4.0          | Network communication protocols      |
 | [Google Logging](https://github.com/google/glog)                               | 0.4.0          | Logging                              |
 | [JSON for Modern C++(JSON)](https://github.com/nlohmann/json)                  | 3.10.1         | PSI parameter configuration          |
 

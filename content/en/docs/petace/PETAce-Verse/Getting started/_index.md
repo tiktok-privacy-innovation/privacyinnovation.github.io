@@ -18,8 +18,8 @@ description: ""
 
 | Required dependency                                                            | Tested version | Use                             |
 |--------------------------------------------------------------------------------|----------------|---------------------------------|
-| [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo)       | 0.3.0          | Cryptography primitives         |
-| [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network) | 0.3.0          | Network communication protocols |
+| [PETAce-Solo](https://github.com/tiktok-privacy-innovation/PETAce-Solo)       | 0.4.0          | Cryptography primitives         |
+| [PETAce-Network](https://github.com/tiktok-privacy-innovation/PETAce-Network) | 0.4.0          | Network communication protocols |
 
 | Optional dependency                                | Tested version | Use               |
 |----------------------------------------------------|----------------|-------------------|
