@@ -25,8 +25,9 @@
       <main role="main" class="td-main">
         {{ block "main" . }}{{ end }}
       </main>
-      {{ partial "footer.html" . }}
-    </div>
-    {{ partialCached "scripts.html" . }}
-  </body>
+          {{ partial "footer.html" . }}
+  </div>
+  {{ partialCached "scripts.html" . }}
+  {{ partial "cookie-consent.html" . }}
+</body>
 </html>
