@@ -21,6 +21,9 @@
     "url": "https://github.com/tiktok-privacy-innovation/privacyinnovation.github.io/issues"
   },
   "homepage": "https://github.com/tiktok-privacy-innovation/privacyinnovation.github.io#readme",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.27",
