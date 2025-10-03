@@ -176,12 +176,6 @@ name = "License"
 url = "https://github.com/tiktok-privacy-innovation/privacyinnovation.github.io/blob/main/LICENSE"
 
 [[params.links.user]]
-name = "Medium"
-url = "https://medium.com/@PrivacyInno_tt"
-icon = "fab fa-medium"
-desc = "Follow us on Medium to get the latest news!"
-
-[[params.links.user]]
 name = "Dev.to"
 url = "https://dev.to/privacyinnovation"
 icon = "fab fa-dev"
@@ -189,7 +183,7 @@ desc = "Follow us on Dev.to to get the latest news!"
 
 [[params.links.user]]
 name = "Twitter"
-url = "https://twitter.com/PrivacyInno_tt"
+url = "https://x.com/TikTokPrivacyGo"
 icon = "fab fa-twitter"
 desc = "Follow us on Twitter to get the latest news!"
 

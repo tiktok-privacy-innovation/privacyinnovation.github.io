@@ -67,5 +67,5 @@ PrivacyGo demonstrates the intricate and innovative fusion of various PETs, show
 Follow us on github and twitter:
 
 * Github: https://github.com/tiktok-privacy-innnovation/PrivacyGo
-* Twitter: https://twitter.com/PrivacyInno_tt
+* Twitter: https://x.com/TikTokPrivacyGo
 

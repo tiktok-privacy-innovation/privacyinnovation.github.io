@@ -18,5 +18,5 @@ author: <a href="https://www.businessinsider.com/tiktok-quietly-building-data-sh
 Follow us on github and twitter:
 
 * Github: https://github.com/tiktok-privacy-innnovation/PrivacyGo
-* Twitter: https://twitter.com/PrivacyInno_tt
+* Twitter: https://x.com/TikTokPrivacyGo
 
